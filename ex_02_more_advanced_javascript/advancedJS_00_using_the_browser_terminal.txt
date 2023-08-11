@@ -1,0 +1,7 @@
+You can use the command line API in the browser to manupulate the elements in the page. 
+
+It works with vanilla JS or, in chrome, with it's own syntax similar to jquery.
+
+For example, let's say we want to pick the first instance of a class. We can do the following:
+
+		$('.classname').first();
