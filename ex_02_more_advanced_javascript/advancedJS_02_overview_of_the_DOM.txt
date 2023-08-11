@@ -1,0 +1,26 @@
+For the purposes of JS, the browser bunches all the elements in the page into an object: the Document Object Model or DOM.
+
+This is nothing but all the html content and other methods and needed functions bunched in an object as if
+
+const DOM {
+	<head> {
+		...
+	}
+	<body> {
+		...
+	}
+}
+
+More or less.
+
+We can query stuff in the page using the DOM
+
+	document.location.href -> will grab the content in href (the url) stored inside the location class, inside the document object.
+
+We can also query the DOM by using the browser syntax to be more efficient:
+
+	document.getElementsByClassName('className')[0]; -> this will grab the first element in the array 'className' stored in the DOM object, AS AN OBJECT.
+
+And we can be very specific:
+
+	document.getElementsByClassName('topics')[2].children[0].text -> this will get the element number [2] in the array, which being another object will have sub-elements. Then pick the first child element and output only the text.
