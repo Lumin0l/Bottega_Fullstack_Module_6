@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title></title>
+</head>
+
+<style>
+	.activeHeading {
+		color: firebrick;
+		font-size: 2em;
+		cursor: pointer;
+	}
+
+	.nonActiveHeading {
+		color: cornflowerblue;
+		font-size: 4em;
+		cursor: pointer;
+	}
+</style>
+
+<body>
+
+	<div id="mainHeading" class="activeHeading otherClassesThatItMightHave">
+		Hi there
+	</div>
+
+</body>
+
+<script>
+	const heading = document.getElementById('mainHeading');
+	/* 
+	This method will keep the other classes that the element might have:
+
+	heading.onclick = () => {
+		if (heading.classList.contains('activeHeading')) {
+			heading.classList.remove('activeHeading');
+			heading.classList.add('nonActiveHeading');
+		} else {
+			heading.classList.add('activeHeading');
+			heading.classList.remove('nonActiveHeading');
+		};
+	} */
+
+	/* The elements in the object are saved as an array, so with the function "contains" we search for the name of the class we want to replace. */
+	
+	/* This method will overwrite the other classes the element might have */
+	heading.onclick = () => {
+		if (heading.classList.contains('activeHeading')) {
+			heading.className = 'nonActiveHeading';
+		} else {
+			heading.className = 'activeHeading';
+		};
+	}
+</script>
+
+</html>
