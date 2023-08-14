@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title>/* Example on how to make an image that shows text when hovered over */</title>
+</head>
+
+<style>
+	img {
+		width: 400px;
+	}
+
+	.container {
+		position: relative;
+		text-align: center;
+		color: white;
+	}
+
+	.show-img-overlay {
+		position: relative;
+		bottom: 60px;
+		font-size: 21px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.hide-img-overlay {
+		position: relative;
+		bottom: 60px;
+		font-size: 21px;
+		color: transparent;
+	}
+</style>
+
+<body>
+
+	<div class="container">
+		<img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/laptop.jpg" class="site-img" alt="Laptop">
+		<div class="hide-img-overlay">Image Description</div>
+	</div>
+
+	<div class="container">
+		<img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/another-laptop.jpg" class="site-img" alt="Laptop">
+		<div class="hide-img-overlay">Some Other Image Description</div>
+	</div>
+
+</body>
+
+<script>
+
+	 const img = document.getElementsByClassName('site-img')[0];
+		img.addEventListener('click', (e) => {
+			debugger;
+		});
+		const imgs = document.querySelectorAll('.site-img');
+		imgs.forEach(img => {
+			img.addEventListener('mouseover', (event) => {
+				const captionElement = event.target.parentElement.children[1];
+				captionElement.className = 'show-img-overlay';
+			});
+		});
+		imgs.forEach(img => {
+			img.addEventListener('mouseout', (event) => {
+				const captionElement = event.target.parentElement.children[1];
+				captionElement.className = 'hide-img-overlay';
+			});
+		});
+
+	/* const image_one = document.getElementsByClassName('site-img')[0];
+	const image_both = document.getElementsByClassName('site-img');
+
+	image_one.addEventListener('click', (e) => { // The "e" is a var called the 'event' that will store the info from the event, like the coordinates where the click happened, the target of the click... 
+		console.log(e); 
+	});
+	image_both.forEach(image => {
+		image.addEventListener('mouseover', (event) => {			
+			const caption_Element = event.target.parentElement.children[1]; // Here we're creating a script that tells the DOM: go to the object "event", go to the parent element and select the first child, so the parent element is "<div class="container">" and the second child is: "<div class="hide-img-overlay">Image Description</div>"
+			caption_Element.className = 'show-img-overlay'; // Here we're changing the class of the second child of the parent element, so the class "hide-img-overlay" will be changed to "show-img-overlay" 
+		});
+	});
+
+	image_both.forEach(image => {
+			image.addEventListener('mouseout', (event) => {
+				const caption_Element = event.target.parentElement.children[1]; // Here we're creating a script that tells the DOM: go to the object "event", go to the parent element and select the first child, so the parent element is "<div class="container">" and the second child is: "<div class="hide-img-overlay">Image Description</div>"
+				caption_Element.className = 'hide-img-overlay';
+			});
+		}); */
+</script>
+
+</html>
