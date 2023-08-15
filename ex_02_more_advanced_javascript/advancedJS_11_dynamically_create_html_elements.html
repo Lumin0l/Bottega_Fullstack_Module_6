@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title></title>
+</head>
+
+<body>
+	<div class="widget">
+		<input type="text" id="chat-input">
+		<button id="msgBtn" onclick="sendMessage()">Submit</button>
+		<div class="chat-wrapper"></div>
+	</div>
+</body>
+
+<script>
+	function sendMessage() {
+		// Create a new div element
+		const newDiv = document.createElement("div");
+		// Give it a class name
+		newDiv.classList.add('chatMsg');
+		// Create a var to hold the input value
+		let chatInput = document.querySelector('#chat-input').value;
+		// Create a text node that takes that input value
+		const newContent = document.createTextNode(chatInput);
+		// Append the text node to the newly created div
+		newDiv.appendChild(newContent);
+
+		// Get the widget and the chat-wrapper inside it
+		const widget = document.querySelector(".widget");
+		let chatWrapper = document.querySelector(".chat-wrapper");
+		// Clear the input field
+		document.querySelector('#chat-input').value = '';
+		/* 
+		This will make the comments appear one on top of the other
+
+		if (document.querySelectorAll('.chatMsg').length > 0) {
+			chatWrapper = document.querySelectorAll('.chatMsg')[0];
+		} */
+
+		// Insert the new div (in our case after the chat-wrapper, counterintuitive I know)
+		widget.insertBefore(newDiv, chatWrapper);
+	}
+</script>
+
+</html>
