@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title></title>
+
+	<style>
+		img {
+			width: 400px;
+		}
+
+		.site-img {
+			border: 0px 50px 0px 0px solid transparent;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='container'>
+		<img src="https://s3.amazonaws.com/bottega-devcamp/browser-js/laptop.jpg" class="site-img" alt="Laptop">
+	</div>
+</body>
+
+<script>
+	const laptopImage = document.querySelector('.site-img');
+
+	laptopImage.addEventListener('mouseover', function() {
+		laptopImage.style.borderRight = '50px solid red'; // We need to use special mappings to convert CSS properties to JS properties
+	});
+
+	laptopImage.addEventListener('mouseout', function() {
+		laptopImage.style.borderRight = '0px solid transparent';
+	});
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<title>toggle</title>
+</head>
+
+<style>
+	.hidden {
+		display: none;
+	}
+</style>
+
+<body>
+
+	<button id="toggleBtn">Toggle Me</button>
+
+	<div id="mainHeading" class="hidden">
+		Hi there
+	</div>
+
+</body>
+
+<script>
+	/* Changing a div into one state and then reverting it to the original is such a common functionality that JS has a built in way of doing it. */
+	const heading = document.getElementById('mainHeading');
+	const toggleBtn = document.getElementById('toggleBtn');
+
+	toggleBtn.addEventListener('click', function() {
+		heading.classList.toggle('hidden'); // toggle() is a built in function that will add the class if it doesn't exist and remove it if it does
+	});
+
+
+</script>
+
+</html>
