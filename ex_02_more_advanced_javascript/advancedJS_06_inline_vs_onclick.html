@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 2 ways of having it update the date on click -->
+	<div id="dateElement"></div>
+
+		<!-- First: inline script. We create a script and then we call it inline -->
+		<button onclick="renderDate()">Render Date</button>
+
+		<!-- Second: we create a script and then we call it with an event listener -->
+		<!-- ¡¡ Best practice !! -->
+		<button id="renderDateButton">Render Date with event listener</button>
+
+
+</body>
+
+<script>
+const dateElement = document.getElementById('dateElement');
+const dateButton = document.getElementById('renderDateButton');
+
+renderDate = () => {
+	dateElement.innerHTML = Date();
+}
+
+
+/* With the event listener method we first need to find the button and then create the function 
+It is considered a best practice because it contains all the script in one place instead of spreading it in 2 */
+
+dateButton.addEventListener('click', event => {
+	dateElement.innerHTML = Date();
+})
+
+</script>
+</html>
