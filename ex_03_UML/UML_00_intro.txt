@@ -1,0 +1,4 @@
+Unified Modelling Language
+
+	It is a system to standardize the planning needed for an aplication so information stays coherent.
+

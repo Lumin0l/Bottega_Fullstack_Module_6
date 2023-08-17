@@ -1,0 +1,52 @@
+Most common elements:
+
+	Frames
+	Classifiers
+	Stereotypes
+	Comments
+	Dependencies
+	Features (which are also called Properties)
+
+
+-> Frames:
+
+	They help you encapsulate your view components. They tell what the app does in context.
+
+	Different types:
+		- act 	= activity
+		- class = class
+		- cmp 	= components
+		- dep 	= deployment
+		- sd 	= interaction
+		- pkg 	= package
+		- stm 	= state machine
+		- uc 	= use case
+
+-> Classifiers
+
+	A way to identify components. They classify. They are high level information and they are standard.
+	A classifier describes a set of instances that have common behavioral and structural features (operations and attributes, respectively). 
+
+	    - Class
+    	- Component
+    	- Datatype
+    	- Interface
+    	- Node
+    	- Signal
+    	- Subsystem
+    	- Use Case
+
+-> Comments / Notes
+
+	They are used to explain things in a non formalized way. In a way, they are a means to clarify uml info outside of the uml convention.
+	They are a great way to explain the uml stuff either to people who aren't used to this or to people outside the dev process.
+
+-> Dependencies
+
+	Denotes coupling. they are done with a dotted line with an open arrow. Show what parts of the aplication need other parts or outside APIs.
+
+-> Features / Properties
+
+	Represent attributes of a particular element. They follow a naming convention so they can be understood.
+
+	
